@@ -151,6 +151,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-bootstrap-paginator插件文档" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/27/bootstrap-paginator插件文档/">bootstrap-paginator插件文档</a>
+    </h1>
+  
+
+        
+        <a href="/2018/02/27/bootstrap-paginator插件文档/" class="archive-article-date">
+  	<time datetime="2018-02-27T14:40:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="HTML下面的控制分页控件，必须是ul元素才行"><a href="#HTML下面的控制分页控件，必须是ul元素才行" class="headerlink" title="HTML下面的控制分页控件，必须是ul元素才行"></a>HTML下面的控制分页控件，必须是ul元素才行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=&quot;js_paginator&quot;&gt;&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="bootstrap参数"><a href="#bootstrap参数" class="headerlink" title="bootstrap参数"></a>bootstrap参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">var options = &#123;</span><br><span class="line">    bootstrapMajorVersion:3, //对应的bootstrap版本</span><br><span class="line">    currentPage: $&#123;currentPage &#125;, //当前页数，这里是用的EL表达式，获取从后台传过来的值</span><br><span class="line">    numberOfPages: 5, //每页页数</span><br><span class="line">    totalPages:$&#123;totalPages &#125;, //总页数，这里是用的EL表达式，获取从后台传过来的值</span><br><span class="line">    shouldShowPage:true,//是否显示该按钮</span><br><span class="line">    itemTexts: function (type, page, current) &#123;//设置显示的样式，默认是箭头</span><br><span class="line">        switch (type) &#123;</span><br><span class="line">            case &quot;first&quot;:</span><br><span class="line">                return &quot;首页&quot;;</span><br><span class="line">            case &quot;prev&quot;:</span><br><span class="line">                return &quot;上一页&quot;;</span><br><span class="line">            case &quot;next&quot;:</span><br><span class="line">                return &quot;下一页&quot;;</span><br><span class="line">            case &quot;last&quot;:</span><br><span class="line">                return &quot;末页&quot;;</span><br><span class="line">            case &quot;page&quot;:</span><br><span class="line">                return page;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    //点击事件</span><br><span class="line">    onPageClicked: function (event, originalEvent, type, page) &#123;</span><br><span class="line">       // 操作</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"> $(&apos;#js_paginator&apos;).bootstrapPaginator(options);</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/02/27/bootstrap-paginator插件文档/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-WebStorage-HTML5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
