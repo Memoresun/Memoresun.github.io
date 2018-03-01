@@ -151,6 +151,92 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Centos7搭建node环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/28/Centos7搭建node环境/">Centos7搭建node环境</a>
+    </h1>
+  
+
+        
+        <a href="/2018/02/28/Centos7搭建node环境/" class="archive-article-date">
+  	<time datetime="2018-02-28T03:20:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="First-Step"><a href="#First-Step" class="headerlink" title="First Step"></a>First Step</h2><p>阿里云购买最基础的ECS云服务器,系统选择Centos7.3</p>
+<h2 id="Second-Step"><a href="#Second-Step" class="headerlink" title="Second Step"></a>Second Step</h2><p>SSH方式远程登录服务器</p>
+<h3 id="使用NVM安装多版本"><a href="#使用NVM安装多版本" class="headerlink" title="使用NVM安装多版本"></a>使用NVM安装多版本</h3><p><img src="https://github.com/creationix/nvm" alt="nvm教程"></p>
+<ol>
+<li><p>安装NVM<br><code>curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash</code><br>注意：安装成功后一定要重新启动shell.</p>
+</li>
+<li><p>查看是否安装成功<br><code>command -v nvm</code></p>
+</li>
+</ol>
+<p>3.查看node可安装版本<br><code>nvm list-remote</code></p>
+<p>4.安装nodejs<br>nvm install v8.5.0</p>
+<p>5.切换nodejs版本<br>nvm use v8.5.0</p>
+<h2 id="安装-MariaDB"><a href="#安装-MariaDB" class="headerlink" title="安装 MariaDB"></a>安装 MariaDB</h2><p>1.安装 MariaDB<br><code>yum install mariadb-server mariadb</code><br>2.MariaDB命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mariadb   #启动MariaDB</span><br><span class="line">systemctl stop mariadb    #停止MariaDB</span><br><span class="line">systemctl restart mariadb #重启MariaDB</span><br><span class="line">systemctl enable mariadb  #设置开机启动</span><br></pre></td></tr></table></figure></p>
+<p>3.MariaDB配置<br>｀mysql_secure_installation`<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- Enter current password for root (enter for none):&lt;–初次运行直接回车</span><br><span class="line">- Set root password? [Y/n] &lt;– 是否设置root用户密码，输入y并回车或直接回车</span><br><span class="line">- New password: &lt;– 设置root用户的密码</span><br><span class="line">- Re-enter new password: &lt;– 再输入一次你设置的密码</span><br><span class="line">- Remove anonymous users? [Y/n] &lt;– 是否删除匿名用户,生产环境建议删除，所以直接回车</span><br><span class="line">- Disallow root login remotely? [Y/n] &lt;–是否禁止root远程登录,根据自己的需求选择Y/n并回车</span><br><span class="line">- Remove test database and access to it? [Y/n] &lt;– 是否删除test数据库,直接回车</span><br><span class="line">- Reload privilege tables now? [Y/n] &lt;– 是否重新加载权限表，直接回车</span><br></pre></td></tr></table></figure></p>
+<p>4.远程登录MariaDB</p>
+<p>问题：Host ‘XXX’ is not allowed to connect to this MySQL server<br>解决：<code>update user set host=&#39;%&#39; where user=&#39;root&#39;;</code></p>
+<ol>
+<li><p>数据库命令</p>
+</li>
+<li><p>localhost 主机登陆<br><code>mysql -u root -p</code></p>
+</li>
+<li>显示数据库<br><code>show databases;</code></li>
+<li>选择数据库<br><code>use mysql</code></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/02/28/Centos7搭建node环境/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-bootstrap-paginator插件文档" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -322,7 +408,17 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n stable</span><br></pre></td></tr></table></figure>
 <p>4.删除某个版本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n rm 0.10.1</span><br></pre></td></tr></table></figure>
-<h2 id="2-使用nvm管理Node"><a href="#2-使用nvm管理Node" class="headerlink" title="2.使用nvm管理Node"></a>2.使用nvm管理Node</h2>
+<h2 id="2-使用nvm管理Node"><a href="#2-使用nvm管理Node" class="headerlink" title="2.使用nvm管理Node"></a>2.使用nvm管理Node</h2><h3 id="使用NVM安装多版本"><a href="#使用NVM安装多版本" class="headerlink" title="使用NVM安装多版本"></a>使用NVM安装多版本</h3><p><img src="https://github.com/creationix/nvm" alt="nvm教程"></p>
+<ol>
+<li><p>安装NVM<br><code>curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash</code><br>注意：安装成功后一定要重新启动shell.</p>
+</li>
+<li><p>查看是否安装成功<br><code>command -v nvm</code></p>
+</li>
+</ol>
+<p>3.查看node可安装版本<br><code>nvm list-remote</code></p>
+<p>4.安装nodejs<br>nvm install v8.5.0</p>
+<p>5.切换nodejs版本<br>nvm use v8.5.0</p>
+
       
 
       
